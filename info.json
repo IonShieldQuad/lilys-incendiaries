@@ -1,0 +1,13 @@
+{
+	"name": "lilys-incendiaries",
+	"version": "0.0.2",
+	"title": "Lily's Incendiaries",
+	"author": "MsBinaryLily",
+	"description": "Adds a collections of incendiary ammunnition for your weapons! Let's go!",
+	"factorio_version": "2.0",
+	"dependencies": [
+		"base >= 2.0",
+		"space-age",
+		"? distant-misfires"
+		]
+}
