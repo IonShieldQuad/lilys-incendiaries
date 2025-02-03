@@ -133,7 +133,7 @@ local uranium_incendiary_mag = {
       }
     }
   },
-  icon = "__lilys-incendiaries__/",
+  icon = "__lilys-incendiaries__/graphics/icons/uranium-incendiary-rounds-magazine.png",
   ammo_category = "bullet",
   ammo_type =
   {
@@ -161,18 +161,23 @@ local uranium_incendiary_mag = {
             damage = { amount = 24, type = "physical" }
           },
           {
+            type = "damage",
+            damage = { amount = 10, type = "fire" },
+            apply_damage_to_trees = false
+          },
+          {
             type = "activate-impact",
             deliver_category = "bullet"
           },
           {
             type = "create-sticker",
-            sticker = "fire-sticker",
+            sticker = "fire-sticker-uranium",
             show_in_tooltip = true
           },
           {
-            type = "damage",
-            damage = { amount = 10, type = "fire" },
-            apply_damage_to_trees = false
+            type = "create-sticker",
+            sticker = "fire-sticker-uranium-rad",
+            show_in_tooltip = true
           },
           {
             type = "create-fire",
@@ -197,15 +202,45 @@ local uranium_incendiary_mag = {
 
 data:extend({ uranium_incendiary_mag })
 
-local uranium_fire_sticker = data.raw.deepcopy("fire-flame")
-uranium_fire_sticker.name = "fire-flame-uranium"
-uranium_fire_sticker.duration_in_ticks = uranium_fire_sticker.duration_in_ticks * 2
-uranium_fire_sticker.damage_per_tick = { { amount = 20 * 100 / 60, type = "fire" }, { amount = 20 * 100 / 60, type = "radiation" } }
-uranium_fire_sticker.animation.tint = { r = 0.5, g = 0.8, b = 0.0, a = 0.2 }
+
+
+local uranium_fire_sticker = table.deepcopy(data.raw["sticker"]["fire-sticker"])
+uranium_fire_sticker.name = "fire-sticker-uranium"
+uranium_fire_sticker.duration_in_ticks = uranium_fire_sticker.duration_in_ticks * 1.5
+uranium_fire_sticker.damage_per_tick = { amount = 20 * 100 / 60, type = "fire" }
+uranium_fire_sticker.animation.tint = { r = 0.4, g = 0.8, b = 0.15, a = 0.2 }
 uranium_fire_sticker.target_movement_modifier= 0.7
+uranium_fire_sticker.damage_interval = 5
 
 data:extend({uranium_fire_sticker})
 
+local uranium_fire_sticker_rad = table.deepcopy(data.raw["sticker"]["fire-sticker-uranium"])
+uranium_fire_sticker_rad.name = "fire-sticker-uranium-rad"
+uranium_fire_sticker_rad.duration_in_ticks = uranium_fire_sticker.duration_in_ticks * 5
+if (data.raw["damage-type"]["radiation"] == nil) then
+  uranium_fire_sticker_rad.damage_per_tick = { amount = 10 * 100 / 60, type = "poison" }
+else
+  uranium_fire_sticker_rad.damage_per_tick = { amount = 10 * 100 / 60, type = "radiation" }
+end
+uranium_fire_sticker_rad.animation.tint = { r = 0.1, g = 0.8, b = 0.0, a = 0.05 }
+data:extend({ uranium_fire_sticker_rad })
+
+
+local uranium_fire = table.deepcopy(data.raw["fire"]["fire-flame"])
+uranium_fire.name = "fire-flame-uranium"
+uranium_fire.damage_per_tick = {amount = 25 / 60, type = "fire"}
+uranium_fire.emissions_per_second = { pollution = 0.05 }
+uranium_fire.initial_lifetime = 600
+uranium_fire.lifetime_increase_by = 1200
+uranium_fire.lifetime_increase_cooldown = 2
+uranium_fire.maximum_lifetime = 12000
+if (uranium_fire.pictures ~= nil) then
+  for i, pic in ipairs(uranium_fire.pictures) do
+    pic.tint = { r = 0.3, g = 0.8, b = 0.1, a = 1 }
+  end
+end
+
+data:extend({uranium_fire})
 
 data:extend(
 {
@@ -246,14 +281,15 @@ data:extend(
       },
       allow_productivity = false,
       enabled = false,
-      energy_required = 10,
+      energy_required = 100,
       ingredients =
       {
-        { type = "item", name = "uranium-rounds-magazine", amount = 1 },
-        { type = "item", name = "flamethrower-ammo",        amount = 1 },
-        { type = "item", name = "sulfur",                   amount = 1 }
+        { type = "item", name = "uranium-rounds-magazine", amount = 10 },
+        { type = "item", name = "flamethrower-ammo",        amount = 10 },
+        { type = "item", name = "sulfur",                   amount = 10 },
+        { type = "item", name = "uranium-235",                   amount = 1 }
       },
-      results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 1 } }
+      results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 10 } }
     },
 
     -- recipe
@@ -270,13 +306,14 @@ data:extend(
       },
       allow_productivity = false,
       enabled = false,
-      energy_required = 10,
+      energy_required = 100,
       ingredients =
       {
-        { type = "item", name = "piercing-incendiary-rounds-magazine", amount = 1 },
-        { type = "item", name = "uranium-238", amount = 1 }
+        { type = "item", name = "piercing-incendiary-rounds-magazine", amount = 10 },
+        { type = "item", name = "uranium-238", amount = 10 },
+        { type = "item", name = "uranium-235", amount = 1 }
       },
-      results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 1 } }
+      results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 10 } }
     },
 
 
@@ -311,8 +348,8 @@ data:extend(
     name = "incendiary-uranium-magazines",
     icon_size = 256,
     icon = "__lilys-incendiaries__/graphics/technology/uranium-incendiary-rounds-magazine.png",
-    prerequisites = { "uranium-ammo,", "incendiary-magazines" },
-    {
+    prerequisites = { "uranium-ammo", "incendiary-magazines" },
+    unit = {
       count = 2000,
       ingredients =
       {
@@ -328,11 +365,11 @@ data:extend(
     {
       {
         type = "unlock-recipe",
-          recipe = "uranium-incendiary-rounds-magazine-2"
+          recipe = "uranium-incendiary-rounds-magazine"
       },
         {
           type = "unlock-recipe",
-          recipe = "uranium-incendiary-rounds-magazine"
+          recipe = "uranium-incendiary-rounds-magazine-2"
         }
     }
   }

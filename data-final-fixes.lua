@@ -1,7 +1,9 @@
 if mods["distant-misfires"] then
 
     local pir = data.raw.ammo["piercing-incendiary-rounds-magazine"]
+    local uir = data.raw.ammo["uranium-incendiary-rounds-magazine"]
 
+    uir.range_modifier = 1.25
 
     pir.animation = {
         filename = "__base__/graphics/entity/bullet/bullet.png",
@@ -18,6 +20,9 @@ if mods["distant-misfires"] then
         a = 1 
         }
       }
+
+      data:extend({pir, uir})
+
     --[[if (pir.action ~= nil) then
         local actions = ensure_table(pir.action)
         actions:extend({
