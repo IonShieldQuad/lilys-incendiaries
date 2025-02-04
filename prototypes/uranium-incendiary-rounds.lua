@@ -145,6 +145,7 @@ data:extend(
             name = "uranium-incendiary-rounds-magazine",
             category = "chemistry-or-cryogenics",
             subgroup = "ammo",
+---@diagnostic disable-next-line: missing-fields
             recipe_tint = {
                 primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
                 secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
@@ -170,6 +171,7 @@ data:extend(
             name = "uranium-incendiary-rounds-magazine-2",
             category = "chemistry-or-cryogenics",
             subgroup = "ammo",
+---@diagnostic disable-next-line: missing-fields
             recipe_tint = {
                 primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
                 secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff

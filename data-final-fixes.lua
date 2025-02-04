@@ -1,6 +1,9 @@
-if mods["distant-misfires"] then
+--if mods["distant-misfires"] then
+
+    data.raw.ammo["uranium-incendiary-rounds-magazine"].range_modifier = 1.25
 
     local pir = data.raw.ammo["piercing-incendiary-rounds-magazine"]
+    ---@class data.AmmoItemPrototype
     local uir = data.raw.ammo["uranium-incendiary-rounds-magazine"]
 
     uir.range_modifier = 1.25
@@ -50,4 +53,4 @@ if mods["distant-misfires"] then
         })
 
     end--]]
-end
+--end
