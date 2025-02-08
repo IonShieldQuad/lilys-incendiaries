@@ -143,7 +143,7 @@ data:extend(
         {
             type = "recipe",
             name = "uranium-incendiary-rounds-magazine",
-            category = "chemistry-or-cryogenics",
+            category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
 ---@diagnostic disable-next-line: missing-fields
             recipe_tint = {
@@ -169,7 +169,7 @@ data:extend(
         {
             type = "recipe",
             name = "uranium-incendiary-rounds-magazine-2",
-            category = "chemistry-or-cryogenics",
+            category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
 ---@diagnostic disable-next-line: missing-fields
             recipe_tint = {

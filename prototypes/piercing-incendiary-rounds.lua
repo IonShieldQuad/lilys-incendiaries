@@ -111,7 +111,7 @@ data:extend({
     {
         type = "recipe",
         name = "piercing-incendiary-rounds-magazine",
-        category = "chemistry-or-cryogenics",
+        category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
         subgroup = "ammo",
         ---@diagnostic disable-next-line: missing-fields
         recipe_tint = {
