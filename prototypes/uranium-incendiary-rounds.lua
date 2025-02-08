@@ -81,7 +81,7 @@ local uranium_incendiary_mag = {
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "a[basic-clips]-c[uranium-incendiary-rounds-magazine]",
+    order = "a[basic-clips]-d[uranium-rounds-magazine-incendiary]",
     inventory_move_sound = item_sounds.ammo_small_inventory_move,
     pick_sound = item_sounds.ammo_small_inventory_pickup,
     drop_sound = item_sounds.ammo_small_inventory_move,

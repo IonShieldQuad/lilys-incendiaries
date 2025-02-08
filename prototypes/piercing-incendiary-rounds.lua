@@ -95,7 +95,7 @@ local incendiary_mag = {
       },
       magazine_size = 10,
       subgroup = "ammo",
-      order = "a[basic-clips]-b[piercing-incendiary-rounds-magazine]",
+      order = "a[basic-clips]-c[piercing-rounds-magazine-incendiary]",
       inventory_move_sound = item_sounds.ammo_small_inventory_move,
       pick_sound = item_sounds.ammo_small_inventory_pickup,
       drop_sound = item_sounds.ammo_small_inventory_move,
