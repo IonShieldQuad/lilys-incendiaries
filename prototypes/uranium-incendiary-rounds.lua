@@ -158,7 +158,33 @@ data:extend(
             ingredients =
             {
                 { type = "item", name = "uranium-rounds-magazine", amount = 10 },
-                { type = "item", name = "flamethrower-ammo",       amount = 10 },
+                { type = "fluid", name = "crude-oil",       amount = 1000 },
+                { type = "item", name = "sulfur",                  amount = 10 },
+                { type = "item", name = "uranium-235",             amount = 1 }
+            },
+            results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 10 } }
+        },
+
+        -- recipe as an upgrade to uranium ammo
+        {
+            type = "recipe",
+            name = "uranium-incendiary-rounds-magazine-2",
+            category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+            subgroup = "ammo",
+            ---@diagnostic disable-next-line: missing-fields
+            recipe_tint = {
+                primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 },    -- #ffbba4ff
+                secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 },  -- #bf8e7dff
+                tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 },   -- #a2a2a2ff
+                quaternary = { r = 0.283, g = 0.883, b = 0.283, a = 1.000 }, -- #484848ff
+            },
+            allow_productivity = false,
+            enabled = false,
+            energy_required = 100,
+            ingredients =
+            {
+                { type = "item", name = "uranium-rounds-magazine", amount = 10 },
+                { type = "fluid", name = "light-oil",       amount = 1000 },
                 { type = "item", name = "sulfur",                  amount = 10 },
                 { type = "item", name = "uranium-235",             amount = 1 }
             },
@@ -168,7 +194,7 @@ data:extend(
         -- alt recipe as an upgrade to incendiary ammo
         {
             type = "recipe",
-            name = "uranium-incendiary-rounds-magazine-2",
+            name = "uranium-incendiary-rounds-magazine-3",
             category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
 ---@diagnostic disable-next-line: missing-fields
@@ -221,6 +247,10 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "uranium-incendiary-rounds-magazine-2"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "uranium-incendiary-rounds-magazine-3"
             }
         }
     }

@@ -126,11 +126,38 @@ data:extend({
         ingredients =
         {
             { type = "item", name = "piercing-rounds-magazine", amount = 1 },
-            { type = "item", name = "flamethrower-ammo",        amount = 1 },
+            { type = "fluid", name = "crude-oil",        amount = 100 },
             { type = "item", name = "sulfur",                   amount = 1 }
         },
         results = { { type = "item", name = "piercing-incendiary-rounds-magazine", amount = 1 } }
     }
+})
+
+-- recipe
+data:extend({
+  {
+    type = "recipe",
+    name = "piercing-incendiary-rounds-magazine-2",
+    category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+    subgroup = "ammo",
+    ---@diagnostic disable-next-line: missing-fields
+    recipe_tint = {
+      primary = { r = 1.000, g = 0.735, b = 0.643, a = 1.000 },          -- #ffbba4ff
+      secondary = { r = 0.749, g = 0.557, b = 0.490, a = 1.000 },        -- #bf8e7dff
+      tertiary = { r = 0.637, g = 0.637, b = 0.637, a = 1.000 },         -- #a2a2a2ff
+      quaternary = { r = 0.283, g = 0.283, b = 0.283, a = 1.000 },       -- #484848ff
+    },
+    allow_productivity = false,
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      { type = "item",  name = "piercing-rounds-magazine", amount = 1 },
+      { type = "fluid", name = "light-oil",                amount = 100 },
+      { type = "item",  name = "sulfur",                   amount = 1 }
+    },
+    results = { { type = "item", name = "piercing-incendiary-rounds-magazine", amount = 1 } }
+  }
 })
 
 --technology
@@ -158,6 +185,10 @@ data.extend({
       {
         type = "unlock-recipe",
           recipe = "piercing-incendiary-rounds-magazine"
+      },
+      {
+        type = "unlock-recipe",
+          recipe = "piercing-incendiary-rounds-magazine-2"
       }
     }
     }
