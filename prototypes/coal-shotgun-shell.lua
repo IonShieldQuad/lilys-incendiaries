@@ -72,13 +72,15 @@ local coal_shot = {
                 type = "instant",
                 target_effects =
                 {
-                    type = "damage",
-                    damage = { amount = 4, type = "physical" }
-                },
-                {
-                    type = "damage",
-                    damage = { amount = 4, type = "fire" }
-                },
+                    {
+                        type = "damage",
+                        damage = { amount = 4, type = "physical" }
+                    },
+                    {
+                        type = "damage",
+                        damage = { amount = 4, type = "fire" }
+                    }
+                }   
             }
         },
         {

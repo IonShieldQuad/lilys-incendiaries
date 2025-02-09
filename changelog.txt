@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.13
+Date: 2025-02-09
+  Changes:
+    -  Added piercing incendiary shotgun shells
+    -  Added uranium piercing incendiary shotgun shells
+    -  Minor fix regarding coal shotgun shell's damage
+---------------------------------------------------------------------------------------------------
 Version: 0.0.12
 Date: 2025-02-08
   Changes:
