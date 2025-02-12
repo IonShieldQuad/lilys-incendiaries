@@ -96,7 +96,7 @@ local uranium_fire_sticker = table.deepcopy(data.raw["sticker"]["fire-sticker"])
 uranium_fire_sticker.name = "fire-sticker-uranium"
 uranium_fire_sticker.duration_in_ticks = uranium_fire_sticker.duration_in_ticks * 1.5
 uranium_fire_sticker.damage_per_tick = { amount = 20 * 100 / 60, type = "fire" }
-uranium_fire_sticker.animation.tint = { r = 0.4, g = 0.8, b = 0.15, a = 0.2 }
+uranium_fire_sticker.animation.tint = { r = 0.2, g = 0.3, b = 0.00, a = 0.3 }
 uranium_fire_sticker.target_movement_modifier= 0.7
 uranium_fire_sticker.damage_interval = 5
 
@@ -112,7 +112,7 @@ if (data.raw["damage-type"]["radiation"] == nil) then
 else
   uranium_fire_sticker_rad.damage_per_tick = { amount = 10 * 100 / 60, type = "radiation" }
 end
-uranium_fire_sticker_rad.animation.tint = { r = 0.1, g = 0.8, b = 0.0, a = 0.05 }
+uranium_fire_sticker_rad.animation.tint = { r = 0.0, g = 0.05, b = 0.0, a = 0.05 }
 data:extend({ uranium_fire_sticker_rad })
 
 
