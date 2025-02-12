@@ -1,15 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.14
+Date: 2025-02-10
+  Changes:
+    - Changelog update
+    - Minor update to tint of nuclear flames
+---------------------------------------------------------------------------------------------------
 Version: 0.0.13
 Date: 2025-02-09
   Changes:
-    -  Added piercing incendiary shotgun shells
-    -  Added uranium piercing incendiary shotgun shells
-    -  Minor fix regarding coal shotgun shell's damage
+    - Added piercing incendiary shotgun shells
+    - Added uranium piercing incendiary shotgun shells
+    - Minor fix regarding coal shotgun shell's damage
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.12
 Date: 2025-02-08
   Changes:
-    -  Added wood "science pack" (optional)
+    - Added wood "science pack" (optional)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.11
 Date: 2025-02-08
@@ -42,11 +48,10 @@ Date: 2025-02-07
     - Made fuel-air explosives less janky.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.5
-Date: ????
   Changes:
+    - IDK
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
-Date: ????
   Changes:
     - Added fuel-air explosives
 ---------------------------------------------------------------------------------------------------
