@@ -222,7 +222,7 @@ data:extend(
 data:extend({
     {
         type = "technology",
-        name = "incendiary-uranium-magazines",
+        name = "incendiary-uranium-ammo",
         icon_size = 256,
         icon = "__lilys-incendiaries__/graphics/technology/uranium-incendiary-rounds-magazine.png",
         prerequisites = { "uranium-ammo", "incendiary-magazines" },

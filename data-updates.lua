@@ -8,7 +8,7 @@ if (data.raw["ammo"]["coal-shotgun-shell"]) then
 end
 
 if (data.raw["ammo"]["uranium-incendiary-rounds-magazine"]) then
-    local uranium_incendiary = data.raw["technology"]["incendiary-uranium-magazines"]
+    local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
     table.insert(uranium_incendiary.prerequisites, "piercing-incendiary-shotgun-shells")
     table.insert(uranium_incendiary.effects, {
         type = "unlock-recipe",
