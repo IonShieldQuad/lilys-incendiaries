@@ -4,7 +4,7 @@ Date: 2025-02-14
   Info:
     - Updated by Fr_Dae
   Changes:
-    - Add localisation fr, ch, pt, ru, cs, ja, de 
+    - Add localisation fr, ch, pt, ru, cs, ja, de,es
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.16
 Date: 2025-02-14
