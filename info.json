@@ -1,9 +1,12 @@
 {
 	"name": "lilys-incendiaries",
-	"version": "0.0.16",
 	"title": "Lily's Incendiaries",
-	"author": "MsBinaryLily",
 	"description": "Adds a collections of incendiary ammunnition for your weapons! Let's go!",
+
+	"author": "MsBinaryLily",
+    "homepage": "https://github.com/IonShieldQuad/lilys-incendiaries",
+		
+	"version": "0.0.17",
 	"factorio_version": "2.0",
 	"dependencies": [
 		"base >= 2.0",
