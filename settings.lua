@@ -5,5 +5,13 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         order = "a"
+    },
+    {
+        type = "bool-setting",
+        name = "explosions-ignite",
+        setting_type = "startup",
+        default_value = true,
+        order = "b"
     }
+
 })
