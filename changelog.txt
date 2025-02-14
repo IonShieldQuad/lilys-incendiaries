@@ -6,6 +6,11 @@ Date: 2025-02-14
   Changes:
     - Add localisation fr, ch, pt, ru, cs, ja, de 
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.16
+Date: 2025-02-14
+  Changes:
+    - Added an option to make regular explosives (exp. shells and rockets) to set fires with a chance
+---------------------------------------------------------------------------------------------------
 Version: 0.0.15
 Date: 2025-02-12
   Changes:
