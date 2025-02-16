@@ -193,3 +193,6 @@ data.extend({
     }
     }
 })
+
+local tech = data.raw["technology"]["incendiary-uranium-ammo"]
+table.insert(tech.prerequisites, "incendiary-magazines")

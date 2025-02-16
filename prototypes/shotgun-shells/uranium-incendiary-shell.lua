@@ -159,3 +159,9 @@ data:extend(
             results = { { type = "item", name = "uranium-piercing-incendiary-shotgun-shell", amount = 1 } }
         }
     })
+
+local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
+table.insert(uranium_incendiary.effects, {
+    type = "unlock-recipe",
+    recipe = "uranium-piercing-incendiary-shotgun-shell"
+})

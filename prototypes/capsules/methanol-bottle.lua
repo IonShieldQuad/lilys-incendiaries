@@ -170,6 +170,7 @@ data:extend({
             { type = "item",  name = "iron-plate", amount = 1 }
         },
         results = { { type = "item", name = "methanol-bottle", amount = 1 } },
+---@diagnostic disable-next-line: assign-type-mismatch
         auto_recycle = false
     }
 })

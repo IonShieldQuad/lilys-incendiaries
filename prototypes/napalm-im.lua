@@ -1,3 +1,4 @@
+-- imported from old incendiary munitions mod
 require "util"
 local math3d = require "math3d"
 
@@ -227,7 +228,9 @@ napalmFire.fade_out_duration = 60
 napalmFire.lifetime_increase_by = 0
 napalmFire.pictures = napalmtuil.create_fire_pictures({ blend_mode = "normal", animation_speed = 1, scale = 0.5 }),
 
+---@diagnostic disable-next-line: redundant-value
 data:extend({ napalmFire })
+
 data:extend({
     {
         type = "sticker",

@@ -1,12 +1,23 @@
-require("__lilys-incendiaries__/prototypes/piercing-incendiary-rounds.lua")
-require("__lilys-incendiaries__/prototypes/uranium-incendiary-rounds.lua")
-require("__lilys-incendiaries__/prototypes/fuel-air.lua")
-require("__lilys-incendiaries__/prototypes/coal-shotgun-shell.lua")
-require("__lilys-incendiaries__/prototypes/piercing-incendiary-shell.lua")
-require("__lilys-incendiaries__/prototypes/uranium-incendiary-shell.lua")
-require("__lilys-incendiaries__/prototypes/piercing-incendiary-cannon-shells.lua")
+require("__lilys-incendiaries__/prototypes/fire-entities.lua")
+require("__lilys-incendiaries__/prototypes/core-tech.lua")
 require("__lilys-incendiaries__/prototypes/napalm.lua")
+require("__lilys-incendiaries__/prototypes/fuel-air.lua")
+
+require("prototypes.magazines.piercing-incendiary-rounds")
+require("prototypes.magazines.uranium-incendiary-rounds")
+
+require("prototypes.shotgun-shells.coal-shotgun-shell")
+require("prototypes.shotgun-shells.piercing-incendiary-shell")
+require("prototypes.shotgun-shells.uranium-incendiary-shell")
+
+require("prototypes.missiles.fuel-air-missile") 
+require("prototypes.missiles.napalm-missile")
+
+require("prototypes.cannon-shells.piercing-incendiary-cannon-shells")
+require("prototypes.cannon-shells.uranium-piercing-incendiary-cannon-shells")
+require("prototypes.cannon-shells.napalm-cannon-shells")
+require("prototypes.cannon-shells.uranium-napalm-cannon-shells")
 
 if settings.startup["enable-methanol-bottles"] then
-    require("__lilys-incendiaries__/prototypes/methanol-bottle.lua")
+    require("prototypes.capsules.methanol-bottle")
 end

@@ -208,3 +208,6 @@ data.extend({
         }
     }
 })
+local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
+table.insert(uranium_incendiary.prerequisites, "piercing-incendiary-shotgun-shells")
+

@@ -1,3 +1,4 @@
+-- imported from old incendiary munitions mod
 data:extend({
     {
         type = "explosion",
