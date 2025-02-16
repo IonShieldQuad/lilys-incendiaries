@@ -77,6 +77,10 @@ local uproj = {
                     check_buildability = true
                 },
                 {
+                    type = "create-entity",
+                    entity_name = "uranium-cannon-shell-explosion"
+                },
+                {
                     type = "invoke-tile-trigger",
                     repeat_count = 1
                 },

@@ -54,7 +54,7 @@ return {
         }
         local effects = napalm_boom.action_delivery.target_effects
         for _, data in ipairs(clusters) do
-            table.insert(effects, {
+            table.insert(effects, 
                 {
                     type = "nested-result",
                     action = {
@@ -65,13 +65,15 @@ return {
                         action_delivery = {
                             type = "instant",
                             target_effects = {
-                                type = "create-fire",
-                                entity_name = "napalm-flame",
-                                show_in_tooltip = true
+                                {
+                                    type = "create-fire",
+                                    entity_name = "napalm-flame",
+                                    show_in_tooltip = true
+                                }
                             }
                         }
                     }
-                }
+                
             })
 
         end

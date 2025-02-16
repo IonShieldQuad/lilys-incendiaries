@@ -16,8 +16,8 @@ return {
                 action = {
                     type = "direct",
                     action_delivery = {
-                    type = "delayed",
-                    delayed_trigger = "delayed-fab-ignition"
+                        type = "delayed",
+                        delayed_trigger = "delayed-fab-ignition"
                     }
                 }
             })
@@ -34,6 +34,7 @@ return {
                     distance = data.distance,
                     distance_deviation = data.distance_deviation,
                     action_delivery = {
+                        type = "instant",
                         target_effects = {
                             type = "create-entity",
                             entity_name = "fuel-air-cloud",
