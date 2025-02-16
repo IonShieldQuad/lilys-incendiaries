@@ -19,6 +19,7 @@ end
 
 
 if settings.startup["explosions-ignite"] then
+    -- exp shell
     local proj = data.raw["projectile"]["explosive-cannon-projectile"]
     table.insert(proj.final_action.action_delivery.target_effects, {
         type = "nested-result",
@@ -53,6 +54,7 @@ if settings.startup["explosions-ignite"] then
         }
     })
 
+    -- uranium exp shell
     local uproj = data.raw["projectile"]["explosive-uranium-cannon-projectile"]
 
     table.insert(uproj.final_action.action_delivery.target_effects, {
@@ -97,7 +99,7 @@ if settings.startup["explosions-ignite"] then
     })
 
 
-
+    -- exp missile
     local mproj = data.raw["projectile"]["explosive-rocket"]
     table.insert(mproj.action.action_delivery.target_effects, {
         type = "nested-result",
