@@ -1,5 +1,6 @@
 local armor = table.deepcopy(data.raw["armor"]["mech-armor"])
 armor.name = "mech-armor-fireproof"
+armor.icon = "__lilys-incendiaries__/graphics/icons/mech-armor-fireproof.png"
 
 for _, res in ipairs(armor.resistances) do
     if (res.type == "fire") then
@@ -22,6 +23,7 @@ data:extend({
         category = "advanced-crafting",
         subgroup = "armor",
         allow_productivity = false,
+        allow_quality = false,
         enabled = false,
         energy_required = 60,
         ingredients =
@@ -33,6 +35,35 @@ data:extend({
             { type = "item", name = "plastic-bar", amount = 100 }
         },
         results = { { type = "item", name = "mech-armor-fireproof", amount = 1 } }
+    },
+    {
+      type = "recipe",
+      name = "mech-armor-fireproof-disassembly",
+      category = "advanced-crafting",
+      subgroup = "armor",
+      icons = {
+        {
+            icon = "__lilys-incendiaries__/graphics/icons/mech-armor-fireproof.png"
+        },
+        {
+            icon  = "__base__/graphics/icons/signal/signal-deny.png"
+        }
+      },
+      allow_productivity = false,
+      allow_quality = false,
+      enabled = false,
+      energy_required = 60,
+      main_product = "mech-armor",
+      ingredients =
+      {
+        { type = "item", name = "mech-armor-fireproof", amount = 1 }
+      },
+      results = { 
+        { type = "item", name = "mech-armor",            amount = 1 },
+        { type = "item", name = "tungsten-carbide",      amount = 200 },
+        { type = "item", name = "tungsten-plate",        amount = 100 },
+        { type = "item", name = "low-density-structure", amount = 100 },
+        { type = "item", name = "plastic-bar",           amount = 100 } }
     }
 })
 
@@ -41,7 +72,7 @@ data.extend({
     {
     type = "technology",
     name = "mech-armor-fireproof",
-    icon = "__space-age__/graphics/technology/mech-armor.png",
+    icon = "__lilys-incendiaries__/graphics/technology/mech-armor-fireproof.png",
     icon_size = 256,
     effects =
     {
@@ -49,6 +80,10 @@ data.extend({
         type = "unlock-recipe",
         recipe = "mech-armor-fireproof"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "mech-armor-fireproof-disassembly"
+      }
     },
     prerequisites = {"mech-armor", "metallurgic-science-pack"},
     unit =
