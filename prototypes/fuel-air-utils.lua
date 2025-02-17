@@ -38,7 +38,8 @@ return {
                         target_effects = {
                             type = "create-entity",
                             entity_name = "fuel-air-cloud",
-                            trigger_created_entity = true
+                            trigger_created_entity = true,
+                            show_in_tooltip = true
                         }
                     }
                 }

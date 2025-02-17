@@ -8,11 +8,13 @@ return {
                     {
                         type = "create-fire",
                         entity_name = "napalm-flame",
-                        initial_ground_flame_count = 4
+                        initial_ground_flame_count = 4,
+                        show_in_tooltip = true
                     },
                     {
                         type = "create-sticker",
-                        sticker = "napalm-sticker"
+                        sticker = "napalm-sticker",
+                        show_in_tooltip = true,
                     },
                     {
                         type = "play-sound",
@@ -37,7 +39,8 @@ return {
                                     {
                                         type = "damage",
                                         damage = { amount = damage, type = "fire" },
-                                        apply_damage_to_trees = false
+                                        apply_damage_to_trees = false,
+                                        show_in_tooltip = true
                                     },
                                     {
                                         type = "create-sticker",

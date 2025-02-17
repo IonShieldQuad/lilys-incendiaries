@@ -101,8 +101,7 @@ data:extend(
             name = "uranium-incendiary-rounds-magazine",
             category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
----@diagnostic disable-next-line: missing-fields
-            recipe_tint = {
+            crafting_machine_tint = {
                 primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
                 secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
                 tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 }, -- #a2a2a2ff
@@ -127,8 +126,7 @@ data:extend(
             name = "uranium-incendiary-rounds-magazine-2",
             category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
-            ---@diagnostic disable-next-line: missing-fields
-            recipe_tint = {
+            crafting_machine_tint = {
                 primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 },    -- #ffbba4ff
                 secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 },  -- #bf8e7dff
                 tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 },   -- #a2a2a2ff
@@ -153,8 +151,7 @@ data:extend(
             name = "uranium-incendiary-rounds-magazine-3",
             category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
             subgroup = "ammo",
----@diagnostic disable-next-line: missing-fields
-            recipe_tint = {
+            crafting_machine_tint = {
                 primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
                 secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
                 tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 }, -- #a2a2a2ff
