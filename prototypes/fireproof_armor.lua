@@ -49,7 +49,7 @@ data:extend({
             icon = "__lilys-incendiaries__/graphics/icons/mech-armor-fireproof.png"
         },
         {
-            icon  = "__base__/graphics/icons/signal/signal-deny.png"
+            icon = "__lilys-incendiaries__/graphics/icons/signal-deny.png"
         }
       },
       allow_productivity = false,
