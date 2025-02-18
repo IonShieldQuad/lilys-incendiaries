@@ -20,21 +20,24 @@ data:extend({
     {
         type = "recipe",
         name = "mech-armor-fireproof",
-        category = "advanced-crafting",
+        category = "cryogenics",
         subgroup = "armor",
         allow_productivity = false,
         allow_quality = false,
         enabled = false,
         energy_required = 60,
+        main_product = "mech-armor-fireproof",
         ingredients =
         {
             { type = "item",  name = "mech-armor", amount = 1 },
             { type = "item", name = "tungsten-carbide",              amount = 200 },
             { type = "item", name = "tungsten-plate",              amount = 100 },
             { type = "item",  name = "low-density-structure",                 amount = 100 },
-            { type = "item", name = "plastic-bar", amount = 100 }
+            { type = "item", name = "plastic-bar", amount = 100 },
+            { type = "fluid", name = "fluoroketone-cold", amount = 5000 }
         },
-        results = { { type = "item", name = "mech-armor-fireproof", amount = 1 } }
+        results = { { type = "item", name = "mech-armor-fireproof", amount = 1 },
+                    {type ="fluid", name = "fluoroketone-hot", amount = 2000} }
     },
     {
       type = "recipe",
@@ -56,14 +59,16 @@ data:extend({
       main_product = "mech-armor",
       ingredients =
       {
-        { type = "item", name = "mech-armor-fireproof", amount = 1 }
+        { type = "item", name = "mech-armor-fireproof", amount = 1 },
+        { type = "fluid", name = "fluoroketone-cold", amount = 2000 }
       },
       results = { 
         { type = "item", name = "mech-armor",            amount = 1 },
         { type = "item", name = "tungsten-carbide",      amount = 200 },
         { type = "item", name = "tungsten-plate",        amount = 100 },
         { type = "item", name = "low-density-structure", amount = 100 },
-        { type = "item", name = "plastic-bar",           amount = 100 } }
+        { type = "item", name = "plastic-bar",           amount = 100 },
+        {type ="fluid", name = "fluoroketone-hot", amount = 5000} }
     }
 })
 

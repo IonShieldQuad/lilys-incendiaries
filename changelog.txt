@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+Date: 2025-02-18
+  Changes:
+    - Added some script effects to refresh napalm stickers
+    - Made sure mech armor required space age enabled
+    - Made fireproof mech armor require fluoroketone
+---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 2025-02-17
   Changes:

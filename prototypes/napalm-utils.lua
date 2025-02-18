@@ -9,12 +9,13 @@ return {
                         type = "create-fire",
                         entity_name = "napalm-flame",
                         initial_ground_flame_count = 4,
-                        show_in_tooltip = true
+                        show_in_tooltip = true,
+                        trigger_created_entity = true
                     },
                     {
                         type = "create-sticker",
                         sticker = "napalm-sticker",
-                        show_in_tooltip = true,
+                        show_in_tooltip = true
                     },
                     {
                         type = "play-sound",
@@ -71,7 +72,8 @@ return {
                                 {
                                     type = "create-fire",
                                     entity_name = "napalm-flame",
-                                    show_in_tooltip = true
+                                    show_in_tooltip = true,
+                                    trigger_created_entity = true
                                 }
                             }
                         }

@@ -19,6 +19,13 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         order = "c"
+    },
+    {
+        type = "bool-setting",
+        name = "enable-napalm-ticking",
+        setting_type = "startup",
+        default_value = true,
+        order = "d"
     }
 
 })

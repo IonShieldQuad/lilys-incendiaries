@@ -2,6 +2,7 @@ function OnInit()
 	storage = storage or {}
 	storage.canisters = storage.canisters or {}
     storage.clouds = storage.clouds or {}
+	storage.napalm = storage.napalm or {}
 end
 script.on_init(OnInit)
 script.on_configuration_changed(OnInit)
@@ -20,6 +21,11 @@ script.on_event(defines.events.on_trigger_created_entity, function (event)
 
 	if (entity.name == "fuel-air-cloud") then
 		storage.clouds[entity] = 1
+		--game.print("Reg " .. entity.name)
+	end
+
+	if (entity.name == "napalm-flame") then
+		storage.napalm[entity] = 1
 		--game.print("Reg " .. entity.name)
 	end
 end)
@@ -199,6 +205,49 @@ script.on_event(defines.events.on_tick, function(event)
 
 	
 		end
+	end
+
+	--napalm
+	for napalm, tick in pairs(storage.napalm) do
+		if settings.startup["enable-napalm-ticking"] and event.tick % 30 then
+			
+			if (not napalm.valid) then
+				storage.napalm[napalm] = nil
+			else
+				storage.napalm[napalm] = storage.napalm[napalm] + 1
+
+				if storage.napalm[napalm] > 300 then
+					storage.napalm[napalm] = nil
+				end
+
+				local entities = napalm.surface.find_entities_filtered{
+					position = napalm.position,
+					radius = 2,
+					type = {"unit", "character", "car", "spider-vehicle"}
+				}
+
+					for _, entity in ipairs(entities) do
+						if entity ~= nil and entity.valid and entity.health and entity.destructible and (entity.prototype.sticker_box ~= nil) then
+						
+							napalm.surface.create_entity{
+								name = "napalm-sticker",
+								position = entity.position,
+								force = napalm.force,
+								target = entity,
+								source = napalm
+				}
+
+
+						end
+						
+					end
+
+			end
+
+
+		end
+
+		
 	end
 
 end)

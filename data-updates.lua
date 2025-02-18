@@ -128,6 +128,6 @@ if settings.startup["explosions-ignite"] then
     data:extend({proj, uproj, mproj})
 end
 
-if settings.startup["enable-fireproof-armor"] then
+if mods["space-age"] and settings.startup["enable-fireproof-armor"] then
     require("__lilys-incendiaries__/prototypes/fireproof_armor.lua")
 end
