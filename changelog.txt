@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+Date: 2025-02-19
+  Changes:
+    - Made sure mod cannon shells have the same piercing power and range as their regular countrparts
+---------------------------------------------------------------------------------------------------
 Version: 0.2.8
 Date: 2025-02-18
   Changes:
