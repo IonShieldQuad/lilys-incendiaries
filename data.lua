@@ -20,6 +20,8 @@ require("prototypes.cannon-shells.uranium-napalm-cannon-shells")
 
 require("prototypes.capsules.napalm-capsule")
 
+require("prototypes.napalm-land-mine")
+
 if mods["space-age"] then
     require("prototypes.railgun-shell.uranium-incendiary-railgun-ammo")
 end
