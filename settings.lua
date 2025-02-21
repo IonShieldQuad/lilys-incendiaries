@@ -26,6 +26,13 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         order = "d"
+    },
+    {
+        type = "bool-setting",
+        name = "enable-molotovs",
+        setting_type = "startup",
+        default_value = false,
+        order = "aa"
     }
 
 })
