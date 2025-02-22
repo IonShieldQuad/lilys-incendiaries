@@ -22,13 +22,16 @@ require("prototypes.capsules.napalm-capsule")
 
 require("prototypes.napalm-land-mine")
 
+require("prototypes.artillery-shells.napalm-artillery-shell")
+require("prototypes.artillery-shells.fuel-air-artillery-shell")
+
 if mods["space-age"] then
     require("prototypes.railgun-shell.uranium-incendiary-railgun-ammo")
 end
-if settings.startup["enable-methanol-bottles"] then
+if settings.startup["enable-methanol-bottles"].value then
     require("prototypes.capsules.methanol-bottle")
 end
 
-if settings.startup["enable-molotovs"] then
+if settings.startup["enable-molotovs"].value then
     require("prototypes.capsules.molotov-bottle")
 end

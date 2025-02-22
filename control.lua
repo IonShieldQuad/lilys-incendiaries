@@ -209,14 +209,14 @@ script.on_event(defines.events.on_tick, function(event)
 
 	--napalm
 	for napalm, tick in pairs(storage.napalm) do
-		if settings.startup["enable-napalm-ticking"] and event.tick % 30 then
+		if settings.startup["enable-napalm-ticking"].value and event.tick % 30 then
 			
 			if (not napalm.valid) then
 				storage.napalm[napalm] = nil
 			else
 				storage.napalm[napalm] = storage.napalm[napalm] + 1
 
-				if storage.napalm[napalm] > 300 then
+				if storage.napalm[napalm] > 3000 then
 					storage.napalm[napalm] = nil
 				end
 

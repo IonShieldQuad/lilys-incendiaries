@@ -15,13 +15,6 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "enable-fireproof-armor",
-        setting_type = "startup",
-        default_value = true,
-        order = "c"
-    },
-    {
-        type = "bool-setting",
         name = "enable-napalm-ticking",
         setting_type = "startup",
         default_value = true,
@@ -34,5 +27,29 @@ data:extend({
         default_value = false,
         order = "aa"
     }
-
 })
+
+if mods["space-age"] then
+    data:extend({ 
+        {
+            type = "bool-setting",
+            name = "enable-fireproof-armor",
+            setting_type = "startup",
+            default_value = true,
+            order = "c"
+    } 
+})
+end
+
+if mods["NapalmArtillery"] then
+    data:extend({
+        {
+            type = "string-setting",
+            name = "napalm-artillery-compat",
+            setting_type = "startup",
+            allowed_values = {"theirs", "mine", "both"},
+            default_value = "both",
+            order = "aaa"
+        }
+    })
+end

@@ -9,7 +9,7 @@ end
 
 
 
-if settings.startup["explosions-ignite"] then
+if settings.startup["explosions-ignite"].value then
     -- exp shell
     local proj = data.raw["projectile"]["explosive-cannon-projectile"]
     table.insert(proj.final_action.action_delivery.target_effects, {
@@ -128,6 +128,6 @@ if settings.startup["explosions-ignite"] then
     data:extend({proj, uproj, mproj})
 end
 
-if mods["space-age"] and settings.startup["enable-fireproof-armor"] then
+if mods["space-age"] and settings.startup["enable-fireproof-armor"].value then
     require("__lilys-incendiaries__/prototypes/fireproof_armor.lua")
 end
