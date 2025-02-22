@@ -6,7 +6,7 @@
 	"author": "MsBinaryLily",
     "homepage": "https://github.com/IonShieldQuad/lilys-incendiaries",
 		
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"factorio_version": "2.0",
 	"dependencies": [
 		"base >= 2.0",
