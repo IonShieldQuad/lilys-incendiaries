@@ -45,7 +45,7 @@ local coal_shot_item = {
     },
     magazine_size = 10,
     subgroup = "ammo",
-    order = "b[shotgun]-a[basic-coal]",
+    order = "b[shotgun]-b[basic-coal]",
     inventory_move_sound = item_sounds.ammo_small_inventory_move,
     pick_sound = item_sounds.ammo_small_inventory_pickup,
     drop_sound = item_sounds.ammo_small_inventory_move,
@@ -142,7 +142,7 @@ data:extend({
 })
 
 if settings.startup["enable-alt-recipes"].value then
-    table.insert(data.raw["recipe"]["coal-shotgun-shell"], { type = "item", name = "coal", amount = 5 })
+    table.insert(data.raw["recipe"]["coal-shotgun-shell"].ingredients, { type = "item", name = "coal", amount = 5 })
 else
-    table.insert(data.raw["recipe"]["coal-shotgun-shell"], { type = "item", name = "coal", amount = 10 })
+    table.insert(data.raw["recipe"]["coal-shotgun-shell"].ingredients, { type = "item", name = "coal", amount = 10 })
 end

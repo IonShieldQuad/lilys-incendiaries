@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2025-02-23
+  Changes:
+    - Incendiary magazines and shotgun shells are made in the assembler now (in alt mode)
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2025-02-23
+  Changes:
+    - Fixed coal shotgun shells not requiring any coal
+    - Fixed napalm landmines not using napalm as ingredient
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2025-02-23
   Changes:

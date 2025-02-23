@@ -179,7 +179,7 @@ else
         {
             type = "recipe",
             name = "piercing-incendiary-shotgun-shell",
-            category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+            category = "crafting-with-fluid",
             subgroup = "ammo",
             crafting_machine_tint = {
                 primary = { r = 1.000, g = 0.735, b = 0.643, a = 1.000 }, -- #ffbba4ff

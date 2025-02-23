@@ -144,8 +144,7 @@ data:extend({
         ingredients =
         {
             { type = "item", name = "steel-plate", amount = 1 },
-            { type = "fluid", name = "heavy-oil",  amount = 100 },
-            { type = "fluid", name = "light-oil",   amount = 50 }
+            { type = "fluid", name = "napalm",   amount = 50 }
         },
         results = { { type = "item", name = "napalm-land-mine", amount = 4 } }
     }
