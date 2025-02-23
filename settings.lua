@@ -26,6 +26,13 @@ data:extend({
         setting_type = "startup",
         default_value = false,
         order = "aa"
+    },
+    {
+        type = "bool-setting",
+        name = "enable-alt-recipes",
+        setting_type = "startup",
+        default_value = false,
+        order = "e"
     }
 })
 

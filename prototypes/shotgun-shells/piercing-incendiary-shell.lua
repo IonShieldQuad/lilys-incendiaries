@@ -120,7 +120,7 @@ local incendiary_shot = {
 }
 
 data.extend({incendiary_shot})
-
+if not settings.startup["enable-alt-recipes"].value then
 -- recipe
 data:extend({
     {
@@ -147,6 +147,7 @@ data:extend({
     }
 })
 
+
 -- recipe
 data:extend({
     {
@@ -172,6 +173,37 @@ data:extend({
         results = { { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 } }
     }
 })
+else
+    -- recipe
+    data:extend({
+        {
+            type = "recipe",
+            name = "piercing-incendiary-shotgun-shell",
+            category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+            subgroup = "ammo",
+            crafting_machine_tint = {
+                primary = { r = 1.000, g = 0.735, b = 0.643, a = 1.000 }, -- #ffbba4ff
+                secondary = { r = 0.749, g = 0.557, b = 0.490, a = 1.000 }, -- #bf8e7dff
+                tertiary = { r = 0.637, g = 0.637, b = 0.637, a = 1.000 }, -- #a2a2a2ff
+                quaternary = { r = 0.283, g = 0.283, b = 0.283, a = 1.000 }, -- #484848ff
+            },
+            allow_productivity = false,
+            enabled = false,
+            energy_required = 8,
+            ingredients =
+            {
+                { type = "item",  name = "piercing-shotgun-shell", amount = 1 },
+                { type = "item", name = "coal",              amount = 1 },
+                { type = "item",  name = "sulfur",                 amount = 2 }
+            },
+            results = { { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 } }
+        }
+    })
+
+end
+
+
+
 
 --technology
 data.extend({
@@ -198,14 +230,21 @@ data.extend({
             {
                 type = "unlock-recipe",
                 recipe = "piercing-incendiary-shotgun-shell"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "piercing-incendiary-shotgun-shell-2"
             }
         }
     }
 })
+
+if not settings.startup["enable-alt-recipes"].value then
+    table.insert(data.raw["technology"]["piercing-incendiary-shotgun-shells"].effects, 
+    {
+        type = "unlock-recipe",
+        recipe = "piercing-incendiary-shotgun-shell-2"
+    })
+end
+
+
+
 local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
 table.insert(uranium_incendiary.prerequisites, "piercing-incendiary-shotgun-shells")
 

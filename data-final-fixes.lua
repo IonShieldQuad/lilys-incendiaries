@@ -28,3 +28,10 @@ update_piercing(data.raw["projectile"]["uranium-cannon-projectile"], data.raw["p
     ["uranium-incendiary-cannon-projectile"])
 update_piercing(data.raw["projectile"]["explosive-uranium-cannon-projectile"],
     data.raw["projectile"]["uranium-napalm-cannon-projectile"])
+
+local lightoil = data.raw["fluid"]["light-oil"]
+local napalm = data.raw["fluid"]["napalm"]
+
+if (lightoil.fuel_value ~= nil and napalm.fuel_value == nil) then
+    napalm.fuel_value = lightoil.fuel_value
+end

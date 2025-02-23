@@ -76,7 +76,7 @@ data:extend({
         ingredients =
         {
             { type = "item",  name = "rocket",               amount = 1 },
-            { type = "fluid", name = "petroleum-gas",        amount = 2000 },
+            { type = "fluid", name = "petroleum-gas",        amount = 1000 },
             { type = "item",  name = "rocket-fuel",          amount = 10 },
             { type = "item",  name = "electric-engine-unit", amount = 1 },
             { type = "item",  name = "battery",              amount = 1 }

@@ -106,6 +106,8 @@ local incendiary_mag = {
 data:extend({incendiary_mag})
 
 
+if not settings.startup["enable-alt-recipes"].value then
+
 -- recipe
 data:extend({
     {
@@ -158,6 +160,33 @@ data:extend({
   }
 })
 
+else
+-- alt recipe
+data:extend({
+    {
+        type = "recipe",
+        name = "piercing-incendiary-rounds-magazine",
+        category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+        subgroup = "ammo",
+        crafting_machine_tint = {
+            primary = { r = 1.000, g = 0.735, b = 0.643, a = 1.000 }, -- #ffbba4ff
+            secondary = { r = 0.749, g = 0.557, b = 0.490, a = 1.000 }, -- #bf8e7dff
+            tertiary = { r = 0.637, g = 0.637, b = 0.637, a = 1.000 }, -- #a2a2a2ff
+            quaternary = { r = 0.283, g = 0.283, b = 0.283, a = 1.000 }, -- #484848ff
+        },
+        allow_productivity = false,
+        enabled = false,
+        energy_required = 5,
+        ingredients =
+        {
+            { type = "item", name = "piercing-rounds-magazine", amount = 1 },
+            { type = "item", name = "sulfur",                   amount = 5 }
+        },
+        results = { { type = "item", name = "piercing-incendiary-rounds-magazine", amount = 1 } }
+    }
+})
+end
+
 --technology
 data.extend({
 -- technology
@@ -183,14 +212,19 @@ data.extend({
       {
         type = "unlock-recipe",
           recipe = "piercing-incendiary-rounds-magazine"
-      },
-      {
-        type = "unlock-recipe",
-          recipe = "piercing-incendiary-rounds-magazine-2"
       }
     }
     }
 })
+
+if not settings.startup["enable-alt-recipes"].value then
+  table.insert(data.raw["technology"]["incendiary-magazines"].effects, 
+  {
+      type = "unlock-recipe",
+      recipe = "piercing-incendiary-rounds-magazine-2"
+  })
+end
+
 
 local tech = data.raw["technology"]["incendiary-uranium-ammo"]
 table.insert(tech.prerequisites, "incendiary-magazines")

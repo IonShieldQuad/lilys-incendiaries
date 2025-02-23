@@ -220,7 +220,7 @@ data:extend({ {
         { type = "item", name = "artillery-shell", amount = 1 },
         { type = "item",  name = "napalm-cannon-shell",          amount = 3 },
         { type = "fluid", name = "heavy-oil",             amount = 1000 },
-        { type = "fluid", name = "light-oil",             amount = 500 },
+        { type = "fluid", name = "napalm",             amount = 500 },
         { type = "item",  name = "sulfur", amount = 20 }
     },
     results = { { type = "item", name = "li-napalm-artillery-shell", amount = 1 } }

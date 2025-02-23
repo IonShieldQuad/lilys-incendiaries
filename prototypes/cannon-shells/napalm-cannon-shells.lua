@@ -126,15 +126,13 @@ data:extend({
         ingredients =
         {
             { type = "item",  name = "cannon-shell", amount = 1 },
-            { type = "fluid", name = "light-oil",    amount = 200 },
-            { type = "fluid", name = "heavy-oil",    amount = 400 },
-            { type = "item",  name = "sulfur",       amount = 10 }
+            { type = "fluid", name = "napalm",    amount = 300 },
         },
         results = { { type = "item", name = "napalm-cannon-shell", amount = 1 } }
     }
 })
 
-local tech = data.raw["technology"]["tank"]
+local tech = data.raw["technology"]["napalm"]
 table.insert(tech.effects, {
     type = "unlock-recipe",
     recipe = "napalm-cannon-shell"

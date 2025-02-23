@@ -135,9 +135,14 @@ data:extend({
         ingredients =
         {
             { type = "item", name = "shotgun-shell", amount = 1 },
-            { type = "item", name = "coal",                   amount = 10 }
+            --{ type = "item", name = "coal",                   amount = 10 }
         },
         results = { { type = "item", name = "coal-shotgun-shell", amount = 1 } }
     }
 })
 
+if settings.startup["enable-alt-recipes"].value then
+    table.insert(data.raw["recipe"]["coal-shotgun-shell"], { type = "item", name = "coal", amount = 5 })
+else
+    table.insert(data.raw["recipe"]["coal-shotgun-shell"], { type = "item", name = "coal", amount = 10 })
+end

@@ -170,9 +170,7 @@ data:extend({
         ingredients =
         {
             { type = "item",  name = "uranium-cannon-shell", amount = 10 },
-            { type = "fluid", name = "light-oil",            amount = 2000 },
-            { type = "fluid", name = "heavy-oil",            amount = 4000 },
-            { type = "item",  name = "sulfur",               amount = 100 },
+            { type = "fluid", name = "napalm",            amount = 3000 },
             { type = "item",  name = "uranium-235",          amount = 1 },
         },
         results = { { type = "item", name = "uranium-napalm-cannon-shell", amount = 10 } }

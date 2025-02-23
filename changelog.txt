@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2025-02-23
+  Changes:
+    - Added a setting to use alternate recipes by Fr_Dae
+    - Added napalm fluid; Napalm ammo now requires it for crafting
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2025-02-22
   Changes:

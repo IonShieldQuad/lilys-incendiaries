@@ -132,6 +132,8 @@ local uranium_incendiary_shot = {
 
 data.extend({ uranium_incendiary_shot })
 
+
+if not settings.startup["enable-alt-recipes"].value then
 data:extend(
     {
         -- upgrade to incendiary ammo
@@ -158,6 +160,35 @@ data:extend(
             results = { { type = "item", name = "uranium-piercing-incendiary-shotgun-shell", amount = 1 } }
         }
     })
+else
+    data:extend(
+        {
+            -- upgrade to incendiary ammo
+            {
+                type = "recipe",
+                name = "uranium-piercing-incendiary-shotgun-shell",
+                category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+                subgroup = "ammo",
+                crafting_machine_tint = {
+                    primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
+                    secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
+                    tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 }, -- #a2a2a2ff
+                    quaternary = { r = 0.283, g = 0.883, b = 0.283, a = 1.000 }, -- #484848ff
+                },
+                allow_productivity = false,
+                enabled = false,
+                energy_required = 10,
+                ingredients =
+                {
+                    { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 },
+                    { type = "item", name = "uranium-238",                       amount = 2 },
+                    { type = "fluid", name = "light-oil",                       amount = 10 }
+                },
+                results = { { type = "item", name = "uranium-piercing-incendiary-shotgun-shell", amount = 1 } }
+            }
+        })
+end
+
 
 local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
 table.insert(uranium_incendiary.effects, {

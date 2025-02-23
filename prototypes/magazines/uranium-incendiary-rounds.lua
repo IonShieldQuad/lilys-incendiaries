@@ -91,7 +91,7 @@ local uranium_incendiary_mag = {
 
 data:extend({ uranium_incendiary_mag })
 
-
+if not settings.startup["enable-alt-recipes"].value then
 
 data:extend(
     {
@@ -170,6 +170,58 @@ data:extend(
         }
 })
 
+else
+    data:extend(
+        {
+            -- recipe as an upgrade to uranium ammo
+            {
+                type = "recipe",
+                name = "uranium-incendiary-rounds-magazine",
+                category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+                subgroup = "ammo",
+                crafting_machine_tint = {
+                    primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
+                    secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
+                    tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 }, -- #a2a2a2ff
+                    quaternary = { r = 0.283, g = 0.883, b = 0.283, a = 1.000 }, -- #484848ff
+                },
+                allow_productivity = false,
+                enabled = false,
+                energy_required = 10,
+                ingredients =
+                {
+                    { type = "item",  name = "uranium-rounds-magazine", amount = 1 },
+                    { type = "fluid", name = "light-oil",               amount = 10 },
+                    { type = "item",  name = "sulfur",             amount = 5 }
+                },
+                results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 1 } }
+            },
+
+            -- recipe as an upgrade to uranium ammo
+            {
+                type = "recipe",
+                name = "uranium-incendiary-rounds-magazine-2",
+                category = (mods["space-age"] and "chemistry-or-cryogenics" or "chemistry"),
+                subgroup = "ammo",
+                crafting_machine_tint = {
+                    primary = { r = 1.000, g = 0.835, b = 0.643, a = 1.000 }, -- #ffbba4ff
+                    secondary = { r = 0.749, g = 0.857, b = 0.490, a = 1.000 }, -- #bf8e7dff
+                    tertiary = { r = 0.637, g = 0.937, b = 0.637, a = 1.000 }, -- #a2a2a2ff
+                    quaternary = { r = 0.283, g = 0.883, b = 0.283, a = 1.000 }, -- #484848ff
+                },
+                allow_productivity = false,
+                enabled = false,
+                energy_required = 10,
+                ingredients =
+                {
+                    { type = "item",  name = "piercing-incendiary-rounds-magazine", amount = 1 },
+                    { type = "item",  name = "uranium-238",             amount = 1 }
+                },
+                results = { { type = "item", name = "uranium-incendiary-rounds-magazine", amount = 1 } }
+            }
+        })
+    
+end
 
 local tech = data.raw["technology"]["incendiary-uranium-ammo"]
 table.insert(tech.effects, {
@@ -180,9 +232,10 @@ table.insert(tech.effects, {
     type = "unlock-recipe",
     recipe = "uranium-incendiary-rounds-magazine-2"
 })
-table.insert(tech.effects, {
-    type = "unlock-recipe",
-    recipe = "uranium-incendiary-rounds-magazine-3"
-})
-
+if not settings.startup["enable-alt-recipes"].value then
+    table.insert(tech.effects, {
+        type = "unlock-recipe",
+        recipe = "uranium-incendiary-rounds-magazine-3"
+    })
+end
 

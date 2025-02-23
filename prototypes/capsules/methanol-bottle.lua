@@ -54,7 +54,7 @@ local methanol_bottle_item = {
             }
         }
     },
-    subgroup = "science-pack",
+    subgroup = settings.startup["enable-alt-recipes"].value and "capsule" or "science-pack",
     order = "a[methanol-bottle]",
     inventory_move_sound = item_sounds.science_inventory_move,
     pick_sound = item_sounds.science_inventory_move,
@@ -162,7 +162,7 @@ data:extend({
         name = "methanol-bottle",
         allow_productivity = false,
         enabled = false,
-        energy_required = 30,
+        energy_required = settings.startup["enable-alt-recipes"].value and 5 or 30,
         ingredients =
         {
             { type = "item",  name = "wood", amount = 50 },

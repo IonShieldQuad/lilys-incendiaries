@@ -108,9 +108,7 @@ data:extend({
         ingredients =
         {
             { type = "item",  name = "rocket",    amount = 1 },
-            { type = "fluid", name = "light-oil", amount = 200 },
-            { type = "fluid", name = "heavy-oil", amount = 400 },
-            { type = "item",  name = "sulfur",    amount = 10 }
+            { type = "fluid", name = "napalm", amount = 200 },
         },
         results = { { type = "item", name = "napalm-missile", amount = 1 } }
     }

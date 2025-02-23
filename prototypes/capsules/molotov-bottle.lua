@@ -137,15 +137,14 @@ data:extend({
         energy_required = 5,
         ingredients =
         {
-            { type = "fluid", name = "heavy-oil",       amount = 50 },
-            { type = "item", name = "coal",       amount = 5 },
+            { type = "fluid", name = "napalm",       amount = 30 },
             { type = "item", name = "iron-plate", amount = 1 }
         },
         results = { { type = "item", name = "molotov-bottle", amount = 1 } },
     }
 })
 
-local tech = data.raw["technology"]["flammables"]
+local tech = data.raw["technology"]["napalm"]
 if tech.effects == nil then
     tech.effects = {}
 end
