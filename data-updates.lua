@@ -131,3 +131,6 @@ end
 if mods["space-age"] and settings.startup["enable-fireproof-armor"].value then
     require("__lilys-incendiaries__/prototypes/fireproof_armor.lua")
 end
+
+local flamer = data.raw["fluid-turret"]["flamethrower-turret"]
+table.insert(flamer.attack_parameters.fluids, { type = "napalm", damage_modifier = 2.0 })
