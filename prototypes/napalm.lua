@@ -23,7 +23,7 @@ data:extend({
     {
         type = "recipe",
         name = "napalm",
-        subgroup = "fluid",
+        subgroup = "fluid-recipes",
         category = "chemistry",
         allow_productivity = true,
         enabled = false,
