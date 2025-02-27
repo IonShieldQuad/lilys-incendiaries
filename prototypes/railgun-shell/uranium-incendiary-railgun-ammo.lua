@@ -152,7 +152,7 @@ data:extend({
         ingredients =
         {
             { type = "item",  name = "railgun-ammo", amount = 10 },
-            { type = "fluid", name = "napalm",            amount = 2000 },
+            { type = "fluid", name = "lilys-napalm-mix",            amount = 2000 },
             { type = "fluid", name = "heavy-oil",            amount = 4000 },
             { type = "fluid", name = "fluoroketone-cold",    amount = 1000 },
             { type = "item",  name = "sulfur",               amount = 100 },

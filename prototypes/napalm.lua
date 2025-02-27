@@ -5,7 +5,7 @@ require("__lilys-incendiaries__/prototypes/explosion-im.lua")
 --napalm fluid
 local napalm = {
     type = "fluid",
-    name = "napalm",
+    name = "lilys-napalm-mix",
     icon = "__lilys-incendiaries__/graphics/icons/napalm.png",
     subgroup = "fluid",
     default_temperature = 30,
@@ -22,7 +22,7 @@ data:extend({napalm})
 data:extend({
     {
         type = "recipe",
-        name = "napalm",
+        name = "lilys-napalm-mix",
         subgroup = "fluid-recipes",
         category = "chemistry",
         allow_productivity = true,
@@ -40,7 +40,7 @@ data:extend({
             { type = "item", name = "coal",       amount = 10 },
             { type = "item",  name = "sulfur",    amount = 5 }
         },
-        results = { { type = "fluid", name = "napalm", amount = 100 } }
+        results = { { type = "fluid", name = "lilys-napalm-mix", amount = 100 } }
     }
 })
 
@@ -48,7 +48,7 @@ data.extend({
     -- technology
     {
         type = "technology",
-        name = "napalm",
+        name = "lilys-napalm-mix",
         icon_size = 256,
         icon = "__lilys-incendiaries__/graphics/technology/napalm.png",
         prerequisites = { "flammables", "military-science-pack", "chemical-science-pack" },
@@ -68,14 +68,14 @@ data.extend({
         {
             {
                 type = "unlock-recipe",
-                recipe = "napalm"
+                recipe = "lilys-napalm-mix"
             }
         }
     }
 })
 
 local t = data.raw["technology"]["incendiary-uranium-ammo"]
-table.insert(t.prerequisites, "napalm")
+table.insert(t.prerequisites, "lilys-napalm-mix")
 
 local t2 = data.raw["technology"]["burny-explosive-rocketry"]
-table.insert(t2.prerequisites, "napalm")
+table.insert(t2.prerequisites, "lilys-napalm-mix")

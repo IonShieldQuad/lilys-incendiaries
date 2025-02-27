@@ -133,4 +133,4 @@ if mods["space-age"] and settings.startup["enable-fireproof-armor"].value then
 end
 
 local flamer = data.raw["fluid-turret"]["flamethrower-turret"]
-table.insert(flamer.attack_parameters.fluids, { type = "napalm", damage_modifier = 2.0 })
+table.insert(flamer.attack_parameters.fluids, { type = "lilys-napalm-mix", damage_modifier = 2.0 })
