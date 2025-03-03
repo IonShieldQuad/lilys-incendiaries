@@ -1,0 +1,27 @@
+{
+    "technology": [
+        [
+            "napalm",
+            "lilys-napalm-mix"
+        ]
+    ],
+    "fluid": [
+        [
+            "napalm",
+            "lilys-napalm-mix"
+        ]
+    ],
+    "recipe": [
+        [
+            "napalm",
+            "lilys-napalm-mix"
+        ]
+    ],
+    "item": [
+        [
+            "napalm-barrel",
+            "lilys-napalm-mix-barrel"
+        ]
+    ]
+
+}
