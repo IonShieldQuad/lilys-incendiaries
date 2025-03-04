@@ -104,7 +104,7 @@ data:extend({
         },
         allow_productivity = false,
         enabled = false,
-        energy_required = 10,
+        energy_required = 8,
         ingredients =
         {
             { type = "item",  name = "cannon-shell", amount = 1 },
@@ -130,7 +130,7 @@ data:extend({
         },
         allow_productivity = false,
         enabled = false,
-        energy_required = 10,
+        energy_required = 8,
         ingredients =
         {
             { type = "item",  name = "cannon-shell", amount = 1 },

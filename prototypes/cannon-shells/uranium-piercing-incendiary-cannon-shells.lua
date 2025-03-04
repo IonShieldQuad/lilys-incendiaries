@@ -113,7 +113,7 @@ data:extend({
         },
         allow_productivity = false,
         enabled = false,
-        energy_required = 200,
+        energy_required = 160,
         ingredients =
         {
             { type = "item",  name = "uranium-cannon-shell", amount = 10 },
@@ -140,7 +140,7 @@ data:extend({
         },
         allow_productivity = false,
         enabled = false,
-        energy_required = 200,
+        energy_required = 160,
         ingredients =
         {
             { type = "item",  name = "uranium-cannon-shell", amount = 10 },
@@ -167,7 +167,7 @@ data:extend({
         },
         allow_productivity = false,
         enabled = false,
-        energy_required = 20,
+        energy_required = 16,
         ingredients =
         {
             { type = "item", name = "incendiary-cannon-shell", amount = 10 },
