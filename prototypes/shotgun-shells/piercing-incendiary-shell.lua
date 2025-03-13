@@ -230,6 +230,10 @@ data.extend({
             {
                 type = "unlock-recipe",
                 recipe = "piercing-incendiary-shotgun-shell"
+            }, 
+            {
+                type = "unlock-recipe",
+                recipe = "piercing-incendiary-shotgun-shell-4"
             }
         }
     }
@@ -243,6 +247,32 @@ if not settings.startup["enable-alt-recipes"].value then
     })
 end
 
+-- recipe
+data:extend({
+    {
+        type = "recipe",
+        name = "piercing-incendiary-shotgun-shell-4",
+        category = "crafting",
+        subgroup = "ammo",
+        crafting_machine_tint = {
+            primary = { r = 1.000, g = 0.735, b = 0.643, a = 1.000 },        -- #ffbba4ff
+            secondary = { r = 0.749, g = 0.557, b = 0.490, a = 1.000 },      -- #bf8e7dff
+            tertiary = { r = 0.637, g = 0.637, b = 0.637, a = 1.000 },       -- #a2a2a2ff
+            quaternary = { r = 0.283, g = 0.283, b = 0.283, a = 1.000 },     -- #484848ff
+        },
+        allow_productivity = false,
+        enabled = false,
+        energy_required = 8,
+        ingredients =
+        {
+            { type = "item", name = "coal-shotgun-shell", amount = 2 },
+            { type = "item", name = "copper-plate",                   amount = 5 },
+            { type = "item", name = "steel-plate",               amount = 2 },
+            { type = "item", name = "sulfur",                 amount = 2 }
+        },
+        results = { { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 } }
+    }
+})
 
 
 local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]
