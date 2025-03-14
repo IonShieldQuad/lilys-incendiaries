@@ -125,7 +125,8 @@ if settings.startup["explosions-ignite"].value then
             }
         }
     })
-    data:extend({proj, uproj, mproj})
+---@diagnostic disable-next-line: assign-type-mismatch
+    --data:extend({proj, uproj, mproj})
 end
 
 if mods["space-age"] and settings.startup["enable-fireproof-armor"].value then
