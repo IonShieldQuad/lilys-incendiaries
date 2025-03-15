@@ -20,7 +20,7 @@ local fab_boom = fab_utils.make_fuel_air_effect({
     }
 }, true)
 
-item = {
+local item = {
     type = "ammo",
     name = "fuel-air-artillery-shell",
     icon = "__lilys-incendiaries__/graphics/icons/fab-artillery-shell-icon.png",

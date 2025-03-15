@@ -20,7 +20,7 @@ local napalm_boom = napalm_utils.make_napalm_boom(8, 500, {
     }
 })
 
-item = {
+local item = {
     type = "ammo",
     name = "li-napalm-artillery-shell",
     icon = "__lilys-incendiaries__/graphics/icons/napalm-artillery-shell-icon.png",
