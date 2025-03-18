@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.15
+Date: 2025-03-18
+  Changes:
+    - Added Castra as optional dependency because Castra is cool and fits perfectly with the mod.
+    - Added ability to put wood "sciennce packs" in maraxsis vessels
+---------------------------------------------------------------------------------------------------
 Version: 1.0.14
 Date: 2025-03-15
   Changes:

@@ -6,11 +6,13 @@
 	"author": "MsBinaryLily",
     "homepage": "https://github.com/IonShieldQuad/lilys-incendiaries",
 		
-	"version": "1.0.14",
+	"version": "1.0.15",
 	"factorio_version": "2.0",
 	"dependencies": [
 		"base >= 2.0",
 		"? space-age",
-		"? NapalmArtillery"
+		"? NapalmArtillery",
+		"? Castra",
+		"(?) maraxsis"
 		]
 }

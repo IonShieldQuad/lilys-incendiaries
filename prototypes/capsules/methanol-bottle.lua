@@ -81,7 +81,7 @@ local methanol_bottle = {
             target_effects = {
                 {
                     type = "damage",
-                    damage = {amount = 10, type = "physical"}
+                    damage = { amount = 10, type = "physical" }
                 },
                 {
                     type = "play-sound",
@@ -107,7 +107,7 @@ local methanol_bottle = {
                             target_effects = {
                                 {
                                     type = "damage",
-                                    damage = {amount = 10, type = "fire"},
+                                    damage = { amount = 10, type = "fire" },
                                     apply_damage_to_trees = false
                                 },
                                 {
@@ -165,12 +165,12 @@ data:extend({
         energy_required = settings.startup["enable-alt-recipes"].value and 5 or 30,
         ingredients =
         {
-            { type = "item",  name = "wood", amount = 50 },
-            { type = "item", name = "coal", amount = 1 },
-            { type = "item",  name = "iron-plate", amount = 1 }
+            { type = "item", name = "wood",       amount = 50 },
+            { type = "item", name = "coal",       amount = 1 },
+            { type = "item", name = "iron-plate", amount = 1 }
         },
         results = { { type = "item", name = "methanol-bottle", amount = 1 } },
----@diagnostic disable-next-line: assign-type-mismatch
+        ---@diagnostic disable-next-line: assign-type-mismatch
         auto_recycle = false
     }
 })
@@ -181,7 +181,7 @@ if mods["quality"] then
 end
 
 -- technology
-data:extend({ 
+data:extend({
     {
         type = "technology",
         name = "methanol-bottle-production",
@@ -207,3 +207,135 @@ data:extend({
         order = "a"
     }
 })
+
+if mods["space-age"] and mods["maraxsis"] and not settings.startup["enable-alt-recipes"].value then
+    table.insert(data.raw["lab"]["biolab"].inputs, "methanol-bottle")
+
+    local science_pack = methanol_bottle_item
+    local science_pack_name = "methanol-bottle"
+    local fill_name = "maraxsis-" .. science_pack_name .. "-research-vessel"
+    local empty_name = "maraxsis-" .. science_pack_name .. "-empty-research-vessel"
+
+
+
+    local function generate_recipe_icons(icons, science_pack, icon_shift)
+        if science_pack.icon then
+            table.insert(icons,
+                {
+                    icon = science_pack.icon,
+                    icon_size = (science_pack.icon_size or defines.default_icon_size),
+                    scale = 16.0 / (science_pack.icon_size or defines.default_icon_size), -- scale = 0.5 * 32 / icon_size simplified
+                    shift = icon_shift
+                }
+            )
+        elseif science_pack.icons then
+            icons = util.combine_icons(icons, fluid.icons, { scale = 0.5, shift = icon_shift }, fluid.icon_size)
+        end
+
+        return icons
+    end
+
+    local function add_to_tech(recipe)
+        table.insert(data.raw.technology["maraxsis-research-vessel"].effects, { type = "unlock-recipe", recipe = recipe })
+    end
+
+    data:extend { {
+        type = "item",
+        name = fill_name,
+        icons = {
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel-mask.png",
+                tint = {128, 128, 128},
+                icon_size = 64,
+            }
+        },
+        stack_size = 20,
+        localised_name = { "item-name.maraxsis-full-research-vessel", science_pack.localised_name or { "item-name." .. science_pack_name } },
+        hidden_in_factoriopedia = true,
+        default_import_location = science_pack.default_import_location,
+        weight = 1000000 / 100,
+        order = science_pack.order,
+        inventory_move_sound = item_sounds.metal_large_inventory_move,
+        pick_sound = item_sounds.metal_large_inventory_pickup,
+        drop_sound = item_sounds.metal_large_inventory_move,
+        subgroup = "maraxsis-fill-research-vessel",
+    } }
+
+    data:extend { {
+        type = "recipe",
+        name = fill_name,
+        enabled = false,
+        energy_required = 15,
+        ingredients = {
+            { type = "item", name = "maraxsis-empty-research-vessel", amount = 1 },
+            { type = "item", name = science_pack_name,                amount = 100 },
+        },
+        results = {
+            { type = "item", name = fill_name, amount = 1, ignored_by_stats = 1, ignored_by_productivity = 1 },
+        },
+        allow_productivity = false,
+        allow_quality = false,
+        category = "chemistry",
+---@diagnostic disable-next-line: assign-type-mismatch
+        auto_recycle = false,
+        hide_from_signal_gui = false,
+        allow_decomposition = false,
+        hide_from_player_crafting = true,
+        factoriopedia_alternative = "maraxsis-empty-research-vessel",
+        icons = generate_recipe_icons({
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel-mask.png",
+                tint = { 128, 128, 128 },
+                icon_size = 64,
+            }
+        }, science_pack, { -8, -8 }),
+        subgroup = "maraxsis-fill-research-vessel",
+    } }
+    add_to_tech(fill_name)
+
+    data:extend { {
+        type = "recipe",
+        name = empty_name,
+        enabled = false,
+        energy_required = 15,
+        ingredients = {
+            { type = "item", name = fill_name, amount = 1 },
+        },
+        results = {
+            { type = "item", name = science_pack_name,                amount = 100, ignored_by_stats = 100, ignored_by_productivity = 100 },
+            { type = "item", name = "maraxsis-empty-research-vessel", amount = 1,   ignored_by_stats = 1,   ignored_by_productivity = 1,  probability = 0.99 },
+        },
+        allow_productivity = false,
+        allow_quality = false,
+        category = "chemistry",
+---@diagnostic disable-next-line: assign-type-mismatch
+        auto_recycle = false,
+        unlock_results = false,
+        icons = generate_recipe_icons({
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel-tipped.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__maraxsis__/graphics/icons/research-vessel-tipped-mask.png",
+                tint = { 128, 128, 128 },
+                icon_size = 64,
+            }
+        }, science_pack, { 8, 8 }),
+        localised_name = { "recipe-name.maraxsis-empty-research-vessel", science_pack.localised_name or { "item-name." .. science_pack_name } },
+        hide_from_signal_gui = false,
+        allow_decomposition = false,
+        hide_from_player_crafting = true,
+        factoriopedia_alternative = "maraxsis-empty-research-vessel",
+        subgroup = "maraxsis-empty-research-vessel",
+    } }
+    add_to_tech(empty_name)
+end
