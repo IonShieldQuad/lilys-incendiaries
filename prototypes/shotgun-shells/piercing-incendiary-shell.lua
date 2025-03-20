@@ -270,9 +270,20 @@ data:extend({
             { type = "item", name = "steel-plate",               amount = 2 },
             { type = "item", name = "sulfur",                 amount = 2 }
         },
-        results = { { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 } }
+        results = { { type = "item", name = "piercing-incendiary-shotgun-shell", amount = 1 } },
+        main_product = "piercing-incendiary-shotgun-shell"
     }
 })
+
+if settings.startup["enable-alt-recipes"].value then
+    for _, d in ipairs(data.raw["recipe"]["piercing-incendiary-shotgun-shell-4"].ingredients) do
+        if d.name == "copper-plate" then
+            table.remove(data.raw["recipe"]["piercing-incendiary-shotgun-shell-4"].ingredients, _)
+        end
+    end
+else 
+    table.insert(data.raw["recipe"]["piercing-incendiary-shotgun-shell-4"].results, { type = "item", name = "coal", amount = 9 })
+end
 
 
 local uranium_incendiary = data.raw["technology"]["incendiary-uranium-ammo"]

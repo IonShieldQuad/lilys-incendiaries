@@ -1,9 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.16
+Date: 2025-03-20
+  Changes:
+    - Made changes to an alternate recipe for piercing shotgun shell
+---------------------------------------------------------------------------------------------------
 Version: 1.0.15
 Date: 2025-03-18
   Changes:
     - Added Castra as optional dependency because Castra is cool and fits perfectly with the mod.
-    - Added ability to put wood "sciennce packs" in maraxsis vessels
+    - Added ability to put wood "science packs" in maraxsis vessels
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.14
 Date: 2025-03-15
