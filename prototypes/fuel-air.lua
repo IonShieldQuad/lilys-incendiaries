@@ -195,9 +195,10 @@ local boom_action = {
 local fab_dummy_projectile = {
     type = "projectile",
     name = "fuel-air-explosion",
-    acceleration = 1,
+    icon = data.raw["fluid"]["steam"].icon,
+    acceleration = 0.00001,
     flags = {"not-on-map"},
-    hidden = true,
+    --hidden = true,
     action = boom_action
 }
 

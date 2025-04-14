@@ -183,8 +183,9 @@ script.on_event(defines.events.on_tick, function(event)
 							name = "fuel-air-explosion",
 							position = cld.position,
 							target = cld.position,
+							force = cld.force,
 							--target = {x = cld.position.x - 0.5 + math.random(), y = cld.position.y - 0.5 + math.random() },
-							initial_speed = 0.01
+							initial_speed = 0.0001
 						})
 					end
 					--[[if (boom == nil) then

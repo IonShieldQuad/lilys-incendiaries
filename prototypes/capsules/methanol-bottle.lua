@@ -228,8 +228,6 @@ if mods["space-age"] and mods["maraxsis"] and not settings.startup["enable-alt-r
                     shift = icon_shift
                 }
             )
-        elseif science_pack.icons then
-            icons = util.combine_icons(icons, fluid.icons, { scale = 0.5, shift = icon_shift }, fluid.icon_size)
         end
 
         return icons
