@@ -52,40 +52,41 @@ data:extend({ napalm_missile_item })
 local napalm_missile = table.deepcopy(data.raw["projectile"]["rocket"])
 napalm_missile.name = "napalm-missile"
 napalm_missile.action = {
-        type = "direct",
-        action_delivery =
+    type = "direct",
+    action_delivery =
+    {
+        type = "instant",
+        target_effects =
         {
-            type = "instant",
-            target_effects =
             {
-                {
-                    type = "nested-result",
-                    action = napalm_boom
-                },
-                {
-                    type = "create-entity",
-                    entity_name = "medium-scorchmark-tintable",
-                    check_buildability = true
-                },
-                {
-                    type = "invoke-tile-trigger",
-                    repeat_count = 1
-                },
-                {
-                    type = "destroy-decoratives",
-                    from_render_layer = "decorative",
-                    to_render_layer = "object",
-                    include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
-                    include_decals = false,
-                    invoke_decorative_trigger = true,
-                    decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-                    radius = 4 -- large radius for demostrative purposes
-                }
+                type = "nested-result",
+                action = napalm_boom
+            },
+            {
+                type = "create-entity",
+                entity_name = "medium-scorchmark-tintable",
+                check_buildability = true
+            },
+            {
+                type = "invoke-tile-trigger",
+                repeat_count = 1
+            },
+            {
+                type = "destroy-decoratives",
+                from_render_layer = "decorative",
+                to_render_layer = "object",
+                include_soft_decoratives = true,     -- soft decoratives are decoratives with grows_through_rail_path = true
+                include_decals = false,
+                invoke_decorative_trigger = true,
+                decoratives_with_trigger_only = false,     -- if true, destroys only decoratives that have trigger_effect set
+                radius = 4                                 -- large radius for demostrative purposes
             }
         }
     }
+}
 napalm_missile.animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({ 1.0, 0.3, 0.0 })
 
+---@diagnostic disable-next-line: assign-type-mismatch
 data:extend({ napalm_missile })
 
 
@@ -107,7 +108,7 @@ data:extend({
         energy_required = 10,
         ingredients =
         {
-            { type = "item",  name = "rocket",    amount = 1 },
+            { type = "item",  name = "rocket",           amount = 1 },
             { type = "fluid", name = "lilys-napalm-mix", amount = 200 },
         },
         results = { { type = "item", name = "napalm-missile", amount = 1 } }
